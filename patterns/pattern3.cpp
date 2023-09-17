@@ -13,9 +13,7 @@ int main(){
         ch++;
         cout<<endl;
     }
-    return 0;
-
-}
+    
 /*
 A
 B B
@@ -39,5 +37,8 @@ B C
 D E F 
 G H I J 
 */
+ return 0;
+
+}
 
 
