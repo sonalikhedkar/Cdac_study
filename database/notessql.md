@@ -1,5 +1,5 @@
 
-basic commands:
+<h2>basic commands:</h2>
 #to import .sql files
 
 mysql> SOURCE /path/to/file.sql
@@ -86,6 +86,10 @@ SELECT Staments
 SELECT what_to_select
 FROM which_table
 WHERE conditions_to_satisfy;
+
+1) select *from dept;
+2) select deptno,dname from dept;
+3) select deptno,dname loc from dept where deptno=10;
 
 UPDATE:
 syntax:
