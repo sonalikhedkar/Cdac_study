@@ -1,6 +1,6 @@
 
 <h2>basic commands:</h2>
-#to import .sql files
+#to import .sql files in database:
 
 mysql> SOURCE /path/to/file.sql
 
@@ -22,7 +22,7 @@ alter table student add primary key (id);
  alter table student add unique key(email_id);
 
 7. add foriegn key in table:
-a)
+
 CREATE TABLE Orders (
     OrderID int NOT NULL,
     OrderNumber int NOT NULL,
@@ -35,9 +35,10 @@ b)
 ALTER TABLE Orders
 ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
 
-DDL Commands:
+<h2>DDL Commands:</h2>
 
- CREATE:
+ <h3>CREATE:</h3>
+ 
 1.create database database_name;
 
 2.create table table_name(
@@ -48,7 +49,8 @@ column3 datatype,
 );
 
 
-for eg. create table student(id int primary key,
+for eg. 
+create table student(id int primary key,
 first_name varchar(10),
 last_name varchar(10),
 DOB date,
@@ -60,11 +62,11 @@ marks int
 
 
 
-DML Commands:
+<h2>DML Commands:</h2>
 
-INSERT:
+<h3>INSERT:</h3>
 
- Syntax:
+Syntax:
 
 a) INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);
@@ -79,7 +81,7 @@ here all fields are compulsory
 
 >insert into student values(1,"sonali","khedkar",'02.01.2002','khedkarsona9@gmail.com',98);
 
-SELECT Staments
+<h3>SELECT Staments:</h3>
 
  Syntax:
 
@@ -91,11 +93,11 @@ WHERE conditions_to_satisfy;
 2) select deptno,dname from dept;
 3) select deptno,dname loc from dept where deptno=10;
 
-UPDATE:
+<h3>UPDATE:</h3>
 syntax:
 
 UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
 
-LIKE OPERATOR
+<h3>LIKE OPERATOR</h3>
