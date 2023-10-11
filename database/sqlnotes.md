@@ -31,6 +31,16 @@ CREATE TABLE Orders (
     FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
 );
 
+8.when we have to see table that present in other database:
+ select *from db_name.tbl_name;
+ e.g select * from campus.student;
+<h3> control flow functions</h3>
+1)IF function:
+syntax:
+IF(condition, value_if_true, value_if_false)
+>SELECT IF(500<1000, "YES", "NO");
+
+
 b)
 ALTER TABLE Orders
 ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
@@ -93,6 +103,9 @@ WHERE conditions_to_satisfy;
 2) select deptno,dname from dept;
 3) select deptno,dname loc from dept where deptno=10;
 
+<h4>select distinct</h4>
+ >select distinct job from emp;
+ 
 <h3>UPDATE:</h3>
 syntax:
 
