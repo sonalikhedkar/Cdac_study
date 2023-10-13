@@ -115,6 +115,16 @@ WHERE condition;
 
 <h3>LIKE OPERATOR</h3>
 
+1)select 8 and 4 like 1;//4!=1 false return 0 then 8 and 0 is 0
+//output is 0
+
+2)select 9 and 5 like true;//true returns 1 that not like 5 the false
+//9 and false(0)->0
+3)select 8 and 4 like null;//null
+
+4)select 5 and 4 list;//1
+5) select 5 and  4 is null ;//0
+6) select 5 and 4 is not null;//1
 
 Assignment:
 5.	Display all student who have taken admission in 6 months course.
