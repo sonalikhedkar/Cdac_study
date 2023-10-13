@@ -114,3 +114,14 @@ SET column1 = value1, column2 = value2, ...
 WHERE condition;
 
 <h3>LIKE OPERATOR</h3>
+
+
+Assignment:
+5.	Display all student who have taken admission in 6 months course.
+select *from student inner join batch_students on student.id=batch_students.studentid inner join course_batches on course_batches.id=batch_students.batchid where courseid in (1,2,6,7);
+
+6.	Write a query to display the output in the following manner.
+'saleel', 'Aadhaar, Driving Licence, PAN, Voter ID, Passport, Debit, Credit'
+Arrange the data is ascending order of nameFirst.
+select * from student inner join student_cards on student.id=student_cards.studentid order by namefirst,name;
+
