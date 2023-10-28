@@ -16,9 +16,16 @@ public class Coins {
 		}
 		two =(num-5*five-one)/2;
 		System.out.println(one+two+five);
-		System.out.println(five);
-		System.out.println(two);
-		System.out.println(one);
+		System.out.println(five);//1
+		System.out.println(two);//3
+		System.out.println(one);//2
 	}
 
 }
+//input 13 
+//output
+//6
+//1
+//3
+//2
+
