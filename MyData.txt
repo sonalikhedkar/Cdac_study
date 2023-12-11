@@ -26,7 +26,7 @@ Graduation:  Qualification:B.Tech       Specialization: Information Technology
 university: Dr.Babasaheb Ambedkar Marathwada University,Aurangabad 
 College: Government college of Engineering Aurangabad
 division:I division     degree %=66.76%
-Year of Admission :2019     year of passing:2023
+Year of Admission : August 2019     year of passing:2023
 
 Semester 1st->CGPA:5.636(56.36%)
 total:750 obtained:423
