@@ -29,13 +29,28 @@ division:I division     degree %=66.76%
 Year of Admission :2019     year of passing:2023
 
 Semester 1st->CGPA:5.636(56.36%)
+total:750 obtained:423
+
 Sem 2nd->5.636( 56.36% )
+total:750 obtained:423
+
 Sem 3rd->6.778( 67.78% )
+total:900  obtained:610
+
 Sem 4th->6.880 (68.80% )
+total:850   obtained:585
+
 Sem 5th->7.700( 77.00% )
+total:1000 obtained:770
+
 Sem 6th->6.091( 60.91% )
+total:700  obtained:427
+
 Sem 7th->7.143( 71.43% )
+total:750   obtained:536
+
 Sem 8th->7.643( 76.43% )
+total:750 obtained:573
 
 Academic project Details: 
 Qualification:PG Diploma
