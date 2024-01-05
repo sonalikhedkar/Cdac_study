@@ -1,0 +1,64 @@
+Linux commands:
+
+1.sudo ->run with root user/system Account
+2.sudo apt update ->update all part of linux
+3.whoami ->ubuntu
+4.date ->gives date
+5.clear ->clear the linux shell(in windows cls)
+6.pwd ->present working directory
+7.rm welcome.txt ->remove file
+8.cd ->change directory
+Git is part of linux
+9.git --version ->for git version
+10.mkdir ->create directory
+11.touch welcome.txt ->create new file
+12.cat welcome.txt ->read content from file
+13.nano welcome.txt ->to write or edit file //if not exist then create new file
+ctr+x for exit form file and save yes(Y)
+14.cp ->copy 
+test1.txt content copy into test2.text
+cp test1.txt test2.txt
+source target
+15.rmdir sdm ->remove directory sdm
+
+javascript
+1.sudo apt install nodejs
+2.touch hello.js 
+3.nano hello.js
+
+Express.js
+1.sudo apt install npm init
+2.npm install express
+3.webserver.js file
+
+code:
+var http=require('http');
+var onReceive=function(req,res){
+   res.write('<h1>Shubham I Love you so much</h1>');
+   res.end();
+};
+var app=http.createServer(onReceive);
+app.listen(9000);
+console.log("Test Web Server");
+
+4.node webserver.js
+5.security->security group->launch-wizard-42
+edit inbound rule->add one more rule->type:all traffic(any form)
+source type->anywhere-IPV4(save rules)
+
+
+Docker:
+to install docker
+sudo apt install docker.io
+ docker -v
+git clone "link"
+cd to that folder contains dockerfile
+
+sudo docker build -t transflower .
+//to see that images made or not
+sudo docker images
+ sudo docker run -d -p 8000:8000 transflower
+search on google http://IPaddress:8000
+
+
+
