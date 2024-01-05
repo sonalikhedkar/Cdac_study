@@ -1,4 +1,4 @@
-Linux commands:
+xLinux commands:
 
 1.sudo ->run with root user/system Account
 2.sudo apt update ->update all part of linux
@@ -49,16 +49,16 @@ source type->anywhere-IPV4(save rules)
 
 Docker:
 to install docker
-sudo apt install docker.io
- docker -v
-git clone "link"
-cd to that folder contains dockerfile
+1.sudo apt install docker.io
+2. docker -v
+3.git clone "link"
+4.cd to that folder contains dockerfile
 
-sudo docker build -t transflower .
+5.sudo docker build -t transflower .
 //to see that images made or not
-sudo docker images
- sudo docker run -d -p 8000:8000 transflower
-search on google http://IPaddress:8000
+6.sudo docker images
+7. sudo docker run -d -p 8000:8000 transflower
+8.search on google http://IPaddress:8000
 
 
 
