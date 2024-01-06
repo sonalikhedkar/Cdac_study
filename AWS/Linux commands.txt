@@ -46,6 +46,7 @@ console.log("Test Web Server");
 edit inbound rule->add one more rule->type:all traffic(any form)
 source type->anywhere-IPV4(save rules)
 
+5.got browser http://IpAddressOfInstance:port
 
 Docker:
 sudo apt update 
