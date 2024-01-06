@@ -48,6 +48,7 @@ source type->anywhere-IPV4(save rules)
 
 
 Docker:
+sudo apt update 
 to install docker
 1.sudo apt install docker.io
 2. docker -v
@@ -60,5 +61,25 @@ to install docker
 7. sudo docker run -d -p 8000:8000 transflower
 8.search on google http://IPaddress:8000
 
-
-
+Shell scripts 
+sudo apt update 
+1.mkdir scripts
+cd scripts
+2.touch hello.sh
+3.nano hello.sh
+write into:
+echo hello world
+and save file
+run file ->first change Mode
+4.chmod 755 hello.sh 
+chmod is a command of Linux (Unix-like systems) that can be used to modify the file permissions. It changes group, user, and others to execute, write, and read permission. This chmod 755 Linux command is an essential use case to chmod. 
+5.and then run
+./hello.sh
+6 we can write other linux command  in shellscript file 
+ex.
+name="Welcome"
+echo=$name
+//$to variable name
+mkdir seed
+cd seed
+touch welcome.txt
