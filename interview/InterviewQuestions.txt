@@ -1,0 +1,257 @@
+
+#### Project Based Questions
+1. Introduce the project
+2. Describe the project modules
+3. Detail the purpose and function of the project
+4. Talk about the tools you used
+5. Explain your contribution to the project
+6. Mention challenges and how you overcame them
+7. Highlight your teamwork skills
+8. Note the duration of the project
+9. Address the benefits and disadvantages of the project
+
+##Array related other question practice
+**************************************************************************************
+####finding 2nd Largest In Array
+
+approach 1:
+1. Sort the array in ascending order.
+2. Find the second element which is not equal to the largest element from the sorted array.
+
+java code:
+
+import java.util.*;
+public class FindSecondLargest {
+
+    static int findSecondLargest(int a[], int n) {
+
+        /*
+        First, sort the array and find the first_largest element present in the array (at the last position).
+        */
+        Arrays.sort(a);
+
+        /*
+        Now for the second_largest element, we need to start from second last element as the largest element is at last.
+        */
+        int second_largest = 0;
+        for (int i = n - 2; i >= 0; i--)
+        {
+            /*
+            If the last and second last element are equal then check the previous one else return the second last element.
+            */
+            if (a[i] != a[n - 1])
+            {
+                second_largest = a[i];
+                break;
+            }
+        }
+
+        return second_largest;
+    }
+
+    public static void main(String[] args) {
+        int a[] = { 12, 35, 1, 10, 34, 1 };
+        int n = a.length;
+
+        int answer = findSecondLargest(a, n);
+
+        System.out.println("The second largest element in the array is: " + answer);
+
+    }
+}
+
+
+Time Complexity:O(n log(n))
+space complexity: O(1)
+
+
+Approach 2:
+1. Find the largest element in the array and store its value (let's say first_largest).
+2. Find the largest element in the array which is smaller than first_largest and return the value found.
+
+Time Complexity:O(n)
+space complexity: O(1)
+
+Approach 3:
+
+
+****************************************************************
+#####Swap Two Integer Without 3rd Variable
+
+Method 1 (Using Addition and subtraction) :
+
+X= 25 (First number), Y= 23 (second number)
+Swapping Logic:
+X = X + Y = 25 +23 = 48
+Y = X - Y = 48 - 23 = 25
+X = X -Y = 48 - 25 = 23
+and the numbers are swapped as X =23 and Y =25. 
+
+Algorithm:
+STEP 1: START
+STEP 2: ENTER x, y
+STEP 3: PRINT x, y
+STEP 4: x = x + y
+STEP 5: y= x - y
+STEP 6: x =x - y
+STEP 7: PRINT x, y
+STEP 8: END
+
+Time Complexity: O(1).//constant
+Auxiliary Space: O(1).//constant
+
+Method 2: (Using Multiplication and division) :
+  int x = 10;
+        int y = 5;
+ 
+        if (y == 0) {
+            y = x;
+            x = 0;
+        }
+        else if (x == 0) {
+            x = y;
+            y = 0;
+        }
+        // Code to swap 'x' and 'y'
+        else {
+            x = x * y; // x now becomes 50
+            y = x / y; // y becomes 10
+            x = x / y; // x becomes 5
+        }
+Time Complexity: O(1).//constant
+Auxiliary Space: O(1).//constant
+
+****************************************************************************
+###Data Structure You have Learned In java
+~Linear data Structures:
+static data structure--Array
+Dynamic data structure--LinkedList,stack,Queue
+Non-Linear data structure--tree ,graph
+************************************************
+###Oops concept
+Pillars of OOPs--->
+Abstraction
+Encapsulation
+Inheritance
+Polymorphism
+
+Abstrction:
+Data Abstraction is the property which only the essential details are displayed to the user.
+
+Encapsulation:
+It is defined as the wrapping up of data under a single unit.
+inside the class we write data members and all member functions.
+
+in java classes has two types of relation 
+Association and Inheritance
+
+Association-->HAS a type
+like book has lession 
+team has player
+i.composition:(tight coupling)Nested class
+ii.Aggregation:(loose coupling)add object of one class into other class
+
+Inheritance:IS a type
+like employee is a person
+
+6. Abstraction Implemented in Project:
+
+
+7.Sql Query used in project using Join
+
+
+Coupa Interview Question Round 1
+1.All oops concept, give example of encapsulation
+
+2.Inheritance, type of inheritance, Multi-level inheritance
+3.SQL query to find second highest age of customer
+4.Static block Vs static method, wrote code for static block, example
+5.JVM architecture and java program life cycle in jvm
+6.code to find vowels and their count from given string
+
+Coupa Interview Questions Round 1
+
+2.What is relational vs non relational DB?
+3.Difference between structured & unstructured data
+4.React hooks
+5.Two-sum problem , return indexes
+
+
+Round 1
+1. Introduction
+- A. about myself, Japanese Proficiency, why IT after mech, CDAC Project flow in short
+2. Engineering Project
+- Q. What was unique in our Engineering project?
+3. Which Programming are you comfortable in?
+- A. Java, .Net, C/Cpp Project, build Games in Python, 2 PHP websites (HTML, CSS,
+MySQL, PHP)
+4. CDAC Project
+- A. Technologies used
+User Flow - Java (JWT, HTTPS, BCrypt),
+Stock Fetching .net,
+Frontend - React (redux, axios)
+5. Why Redux, any alternatives used?
+6. Any challenges/ shortfalls faced in redux?
+7. JWT used for Authentication or Authorization?
+8. How did you implement JWT?
+9. JWT Structure? - Header, Payload, Signature
+10. How did you check if JWT is valid?
+11. Explain JWT flow
+- A. Security Filter Chain, OncePerRequestFilter, JWT Creation, etc
+12. How did you ensure that the token is sent in every request?
+- A. using Axios Create, and further custom middleware functions before making axios calls.
+13. Components in React? - Functional, Class
+14. where did you use functional component, example in project?
+15. Gave a react code snippet and asked if it will work if not what changes are required?
+16. What is React Strict Mode, did you use it in project?
+17. How to render a list in react?
+18. Why key is needed for elements?
+19. Java code snippet, will this work?
+'''java
+class SomeClass{
+private int n;
+public SomeClass(){
+this(1);
+}
+public SomeClass(int n){
+this();
+this.n = n;
+}
+}
+'''
+20. changed 'this' to 'super' in same code, will this work?
+21. how to achieve Overloading?
+22. can you overload main method?
+23. Static vs instance methods, calling sequence?
+- A. explained how class is created in JVM, where its metadata is stored, and then how
+instance is created
+24. What is Object Oriented?
+25. What is Serialization, deserialization?
+26. Anything to be careful about in Serialization, deserialization?
+27. Spring and Spring Boot
+28. What did you use Spring Security for?
+29. Did you use Docker?
+30. What are the different ways to use mongoDB on a machine which does not have the
+required environment?
+- A. Virtual machine, Separate Server, Container
+31. Docker and Container?
+32. Docker images?
+33. Which can be the best way to give unique keys to elements in react?
+- A. ways: Index of array, Function to provide unique no, id from the data itself
+best would be: index or id of data
+Round 2
+1. Introduction
+2. Issues faced in project
+- A. HTTP Options method, and mapping of filters
+3. How frequently are you updating stock's data and how?
+4. Build a Swiggy app (Took around 15 mins)
+- A. Tables required to build the app along with what that table and column's purpose is.
+- Flows/pages in the app such as, signin, signup, Products, Restaurants, Payment, Profile,
+Orders, Kart, Order Tracking (map), notifications, feedback, ratings, support, chat, etc and
+Explained the complete flow
+5. Find Pythagorean Triples from the given array
+6. Optimize the solution further
+7. Do syntax checking for any Program written in a file
+8. Took the same question to next difficulty level, added brackets inside Quotes
+9. any questions?
+- A. I would really like to know the Optimized solution to the pythagorean triples
