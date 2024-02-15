@@ -123,9 +123,10 @@ Auxiliary Space: O(1).//constant
 
 ****************************************************************************
 ###Data Structure You have Learned In java
-~Linear data Structures:
-static data structure--Array
-Dynamic data structure--LinkedList,stack,Queue
+Linear data Structures:
+1.static data structure--Array
+2.Dynamic data structure--LinkedList,stack,Queue
+
 Non-Linear data structure--tree ,graph
 ************************************************
 ###Oops concept
@@ -164,19 +165,249 @@ Coupa Interview Question Round 1
 1.All oops concept, give example of encapsulation
 
 2.Inheritance, type of inheritance, Multi-level inheritance
-3.SQL query to find second highest age of customer
-4.Static block Vs static method, wrote code for static block, example
-5.JVM architecture and java program life cycle in jvm
-6.code to find vowels and their count from given string
+************************************************************************************
+### SQL query to find second highest age of customer
+1.
+SELECT MAX(age) AS second_highest_age
+FROM customers
+WHERE age < (SELECT MAX(age) FROM customers);
 
+2.
+SELECT age AS second_highest_age
+FROM customers
+ORDER BY age DESC
+LIMIT 1 OFFSET 1;
+
+3.
+SELECT age AS second_highest_age
+FROM (
+    SELECT age, DENSE_RANK() OVER (ORDER BY age DESC) AS rnk
+    FROM customers
+) ranked_customers
+WHERE rnk = 2;
+
+
+*************************************************************************************
+### Static block Vs static method, wrote code for static block, example
+Static methods:
+Static methods belong to the class and they will be loaded into the memory along with the class, you can invoke them without creating an object. (using the class name as reference).
+
+static block:
+Whereas a static block is a block of code with a static keyword. In general, these are used to initialize the static members. JVM executes static blocks before the main method at the time of class loading.
+
+example:
+public class Sample {
+   static int num = 50;
+   static {
+      System.out.println("Hello this is a static block");
+   }
+   public static void demo() {
+      System.out.println("Contents of the static method");
+   }
+   public static void main(String args[]) {
+      Sample.demo();
+   }
+}
+******************************************************************************************
+#### JVM architecture and java program life cycle in jvm:
+
+JVM(Java Virtual Machine) acts as a run-time engine to run Java applications. JVM is the one that actually calls the main method present in a Java code. JVM is a part of JRE(Java Runtime Environment).
+
+The Java Virtual Machine (JVM) is an abstract computing machine that provides an environment in which Java bytecode can be executed. The JVM architecture consists of several components, including:
+
+1.Class Loader: Responsible for loading Java class files into memory. It loads classes as they are referenced by the program.
+
+2.Bytecode Verifier: Verifies the bytecode to ensure that it is valid and does not violate any security constraints.
+
+3.Interpreter: Executes the bytecode line by line, translating it into native machine code and executing it.
+
+4.Just-In-Time (JIT) Compiler: Compiles frequently executed bytecode into native machine code to improve performance.
+
+5.Runtime Data Area: This is where data used during program execution is stored. It includes several components:
+
+Method Area: Stores class structures such as runtime constant pool, field, and method data.
+Heap: Memory area used for dynamic memory allocation for objects and arrays.
+Stack: Each thread in a Java program has its own stack, which stores method invocations and local variables.
+PC Registers: Program Counter registers store the address of the current instruction being executed by the thread.
+Native Method Stacks: Used for executing native methods.
+
+The lifecycle of a Java program in the JVM typically involves the following steps:
+
+Writing Code: Developers write Java code using a text editor or an Integrated Development Environment (IDE).
+
+Compilation: The Java source code is compiled by the Java Compiler (javac) into bytecode, which is platform-independent and can be executed by the JVM.
+
+Loading: The class loader loads the compiled bytecode files (.class files) into memory when they are needed by the program.
+
+Verification: The bytecode verifier checks the loaded bytecode to ensure that it is safe and does not violate any security constraints.
+
+Execution: The JVM executes the bytecode using the interpreter. It may also use the Just-In-Time (JIT) compiler to translate frequently executed bytecode into native machine code for improved performance.
+
+Garbage Collection: The JVM's garbage collector periodically identifies and removes unreferenced objects from memory to reclaim memory resources.
+
+Termination: The program terminates when it finishes executing all its tasks or when the System.exit() method is called explicitly.
+
+Throughout this lifecycle, the JVM manages memory allocation, garbage collection, and other runtime tasks to ensure the smooth execution of Java programs
+
+
+******************************************************************************************************************
+#### code to find vowels and their count from given string
+Algorithm:
+1.Define a string.
+2.Convert the string to lower case so that comparisons can be reduced. Else we need to compare with capital (A, E, I, O, U).
+3.If any character in string matches with vowels (a, e, i, o, u ) then increment the vcount by 1.
+4.If any character lies between 'a' and 'z' except vowels, then increment the count for ccount by 1.
+5.Print both the counts.
+
+public class CountVowelConsonant {  
+    public static void main(String[] args) {  
+          
+        //Counter variable to store the count of vowels and consonant  
+        int vCount = 0, cCount = 0;  
+          
+        //Declare a string  
+        String str = "This is a really simple sentence";  
+          
+        //Converting entire string to lower case to reduce the comparisons  
+        str = str.toLowerCase();  
+          
+        for(int i = 0; i < str.length(); i++) {  
+            //Checks whether a character is a vowel  
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {  
+                //Increments the vowel counter  
+                vCount++;  
+            }  
+            //Checks whether a character is a consonant  
+            else if(str.charAt(i) >= 'a' && str.charAt(i)<='z') {    
+                //Increments the consonant counter  
+                cCount++;  
+            }  
+        }  
+        System.out.println("Number of vowels: " + vCount);  
+        System.out.println("Number of consonants: " + cCount);  
+    }  
+}  
+
+Complexity
+O(n)
+********************************************************************************************
 Coupa Interview Questions Round 1
 
-2.What is relational vs non relational DB?
-3.Difference between structured & unstructured data
+### What is relational vs non relational DB?
+
+Relational Databases:
+->Relational databases are based on the relational model of data
+i. Data is organized into tables, where each table consists of rows and columns.
+ii. Tables are related to each other through defined relationships, typically using foreign keys.
+iii. Structured Query Language (SQL) is used to manipulate and query data.
+iv. Relational databases provide ACID (Atomicity, Consistency, Isolation, Durability) transactions, ensuring data integrity and     
+    consistency.
+v. Popular relational databases include MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server, etc.
+-> relational databases are well-suited for applications with structured data and complex relationships.
+
+Non-Relational Databases (NoSQL Databases):
+
+->Non-relational databases, often referred to as NoSQL databases, emerged in response to the needs of modern web-scale applications with requirements such as high availability, scalability, and flexibility. 
+->NoSQL databases:Use various data models, including key-value pairs, document-based, column-family, and graph-based models.
+->NoSQL databases are suitable for scenarios where traditional relational databases may struggle, such as big data, real-time analytics, content management systems, and distributed systems.
+->Popular NoSQL databases include MongoDB (document-based), Cassandra (column-family), Redis (key-value), Neo4j (graph-based), etc.
+
+***********************************************************************************************
+### Difference between structured & unstructured data
+
+Structured Data:
+i. Structured data is organized and stored in a predefined format, typically with a fixed schema.
+ii.Structured data includes data stored in relational databases, spreadsheets, CSV files, and other tabular formats.
+iii.Due to its organized nature, structured data is easily accessible and analyzable using traditional database management systems and SQL queries.
+
+Unstructured Data:
+i. Unstructured data does not have a predefined format or organization. It lacks a fixed schema and may contain various types of data, including text, images, videos, and more.
+ii. Unstructured data is typically stored in files or documents and may include free-form text, multimedia content, social media posts, emails, etc.
+iii. Examples of unstructured data include social media feeds, emails, images, videos, web pages, sensor data, and documents (e.g., PDFs, Word documents).
+
+*********************************************************************************************
 4.React hooks
-5.Two-sum problem , return indexes
+->Hooks allow function components to have access to state and other React features. Because of this, class components are generally no longer needed.
+->Hooks allow us to "hook" into React features such as state and lifecycle methods.
+->There are 3 rules for hooks:
+
+Hooks can only be called inside React function components.
+Hooks can only be called at the top level of a component.
+Hooks cannot be conditional
+
+1.useState: The useState hook allows functional components to use component-level state. It returns a stateful value and a function to update that value, similar to this.setState in class components.
+
+import React, { useState } from 'react';
+
+function Example() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+}
+
+2.useEffect: The useEffect hook adds the ability to perform side effects in functional components. It serves as a replacement for lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount.
+
+3.Custom Hooks: Custom Hooks are JavaScript functions whose names start with "use" and may call other Hooks. They allow you to extract and reuse logic across multiple components.
+******************************************************************************************
+#### Two-sum problem , return indexes
+Algorithm->  
+We iterate through the array of numbers once.
+For each number, we calculate its complement (the value that, when added to the current number, equals the target sum).
+We check if the complement exists in the HashMap of numbers we've seen so far. If it does, we return the indices of the current number and its complement.
+If the complement is not found, we add the current number and its index to the HashMap.
+If no solution is found after iterating through the array, we return an empty array.
 
 
+import java.util.HashMap;
+import java.util.Map;
+
+public class TwoSum {
+
+    public static int[] twoSum(int[] nums, int target) {
+        // Create a HashMap to store the index of each number
+        Map<Integer, Integer> numMap = new HashMap<>();
+
+        // Iterate through the array
+        for (int i = 0; i < nums.length; i++) {
+            // Calculate the complement (target - current number)
+            int complement = target - nums[i];
+            
+            // Check if the complement exists in the HashMap
+            if (numMap.containsKey(complement)) {
+                // If found, return the indices of the two numbers
+                return new int[]{numMap.get(complement), i};
+            }
+            
+            // If not found, add the current number and its index to the HashMap
+            numMap.put(nums[i], i);
+        }
+        
+        // If no solution is found, return an empty array
+        return new int[]{};
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 11, 15};
+        int target = 9;
+        int[] result = twoSum(nums, target);
+        
+        // Print the indices of the two numbers
+        if (result.length == 2) {
+            System.out.println("Indices: " + result[0] + ", " + result[1]);
+        } else {
+            System.out.println("No solution found.");
+        }
+    }
+}
+
+*******************************************************************************************************
 Round 1
 1. Introduction
 - A. about myself, Japanese Proficiency, why IT after mech, CDAC Project flow in short
@@ -206,7 +437,9 @@ Frontend - React (redux, axios)
 16. What is React Strict Mode, did you use it in project?
 17. How to render a list in react?
 18. Why key is needed for elements?
-19. Java code snippet, will this work?
+********************************************************************
+### Java code snippet, will this work?
+
 '''java
 class SomeClass{
 private int n;
@@ -219,12 +452,58 @@ this.n = n;
 }
 }
 '''
-20. changed 'this' to 'super' in same code, will this work?
+Ans:No
+Recursive constructor invocation SomeClass(int).
+
+## changed 'this' to 'super' in same code, will this work?
+ super() calls object class constructor
+
+# below code works
+public class SomeClass {
+    
+        private int n;
+        public SomeClass(){
+        this(1);
+        }
+        public SomeClass(int n){
+        super();
+        this.n = n;
+        }
+        
+}
+## this code not work:
+public class SomeClass {
+    
+        private int n;
+        public SomeClass(){
+        super(1);
+        }
+        public SomeClass(int n){
+        super();
+        this.n = n;
+        }
+        
+}
+
 21. how to achieve Overloading?
-22. can you overload main method?
-23. Static vs instance methods, calling sequence?
+**************************************************************************************
+ ### can you overload main method?
+
+->yes, we can overload the main() method. But remember that the JVM always calls the original main() method. It does not call the overloaded main() method.
+->public static void main(String args[]) 
+->It is a default signature that is predefined in the JVM. It is called by JVM to execute a program line by line and ends the execution after completion of the method. 
+->we can overload main method like..
+--->public static void main(Integer args) 
+--->public static void main(char args)   
+-->To call the overloaded main() method, we must call it from the original main() method.
+************************************************************************************
+### Static vs instance methods, calling sequence?
 - A. explained how class is created in JVM, where its metadata is stored, and then how
 instance is created
+how class is created in JVM:
+->
+
+**********************************************************************************************
 24. What is Object Oriented?
 25. What is Serialization, deserialization?
 26. Anything to be careful about in Serialization, deserialization?
@@ -241,9 +520,12 @@ required environment?
 best would be: index or id of data
 Round 2
 1. Introduction
-2. Issues faced in project
+### Issues faced in project
+
 - A. HTTP Options method, and mapping of filters
+
 3. How frequently are you updating stock's data and how?
+
 4. Build a Swiggy app (Took around 15 mins)
 - A. Tables required to build the app along with what that table and column's purpose is.
 - Flows/pages in the app such as, signin, signup, Products, Restaurants, Payment, Profile,
