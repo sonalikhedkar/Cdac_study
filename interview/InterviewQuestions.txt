@@ -156,13 +156,14 @@ Inheritance:IS a type
 like employee is a person
 
 6. Abstraction Implemented in Project:
-
+Interfaces used to for like product service,pet service
 
 7.Sql Query used in project using Join
 
 
 Coupa Interview Question Round 1
-1.All oops concept, give example of encapsulation
+1.All oops concept, give example of encapsulation:
+Encapsulation is one of the fundamental principles of object-oriented programming (OOP) and involves bundling data (attributes) and methods (functions) that operate on that data into a single unit, known as a class.
 
 2.Inheritance, type of inheritance, Multi-level inheritance
 ************************************************************************************
@@ -411,19 +412,32 @@ public class TwoSum {
 Round 1
 1. Introduction
 - A. about myself, Japanese Proficiency, why IT after mech, CDAC Project flow in short
+
+***************************************************************************************************************
 2. Engineering Project
 - Q. What was unique in our Engineering project?
+
+*************************************************************************************************
 3. Which Programming are you comfortable in?
 - A. Java, .Net, C/Cpp Project, build Games in Python, 2 PHP websites (HTML, CSS,
 MySQL, PHP)
+****************************************************************************************
 4. CDAC Project
 - A. Technologies used
 User Flow - Java (JWT, HTTPS, BCrypt),
 Stock Fetching .net,
-Frontend - React (redux, axios)
+->HTTPS is essential for ensuring secure communication on the internet, providing encryption, authentication, and data integrity to protect sensitive information transmitted between clients and servers.
+
+Frontend - React (redux, axios):
+->Axios is a popular JavaScript library used to make HTTP requests from web browsers or Node.js. It provides an easy-to-use API and supports various features such as promise-based requests, interceptors, and support for request and response transformations.
+******************************************************************************************************************************
+
 5. Why Redux, any alternatives used?
 6. Any challenges/ shortfalls faced in redux?
+*********************************************************************************************************************************************************
 7. JWT used for Authentication or Authorization?
+JWT (JSON Web Tokens) can be used for both authentication and authorization,
+***********************************************************************************************************88
 8. How did you implement JWT?
 9. JWT Structure? - Header, Payload, Signature
 10. How did you check if JWT is valid?
@@ -503,6 +517,11 @@ instance is created
 how class is created in JVM:
 ->
 
+Calling Sequence:
+
+For instance methods: object.method()
+For static methods: ClassName.method()
+
 **********************************************************************************************
 24. What is Object Oriented?
 25. What is Serialization, deserialization?
@@ -518,22 +537,133 @@ required environment?
 33. Which can be the best way to give unique keys to elements in react?
 - A. ways: Index of array, Function to provide unique no, id from the data itself
 best would be: index or id of data
+************************************************************************
 Round 2
 1. Introduction
 ### Issues faced in project
 
 - A. HTTP Options method, and mapping of filters
+- B. 
+Addtinal therory :
+The HTTP OPTIONS method is used to describe the communication options for the target resource. 
+In Java with a framework like Spring, you can handle OPTIONS requests and map filters using annotations and configuration. For example, you might use @CrossOrigin annotation to enable CORS (Cross-Origin Resource Sharing) and specify allowed origins, methods, and headers for your endpoints. 
+**********************************************************************************************
+### How frequently are you updating stock's data and how?
 
-3. How frequently are you updating stock's data and how?
+API Integration: 
+->Many financial applications integrate with APIs (Application Programming Interfaces) provided by data vendors or exchanges. These APIs allow the application to request and retrieve stock data in real-time or at regular intervals.
 
-4. Build a Swiggy app (Took around 15 mins)
+Event-Driven Updates:
+ ->In event-driven architectures, systems update stock data in response to specific events or triggers. For example, a system may update stock prices when a user requests them or when a significant market event occurs.
+
+************************************************************************************************
+### Build a Swiggy app (Took around 15 mins)
+
 - A. Tables required to build the app along with what that table and column's purpose is.
 - Flows/pages in the app such as, signin, signup, Products, Restaurants, Payment, Profile,
 Orders, Kart, Order Tracking (map), notifications, feedback, ratings, support, chat, etc and
 Explained the complete flow
-5. Find Pythagorean Triples from the given array
-6. Optimize the solution further
-7. Do syntax checking for any Program written in a file
+*****************************************************************************************************
+### Find Pythagorean Triples from the given array:
+### Optimize the solution further
+Method 1:
+static boolean isTriplet(int ar[], int n)
+    {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    // Calculate square of array elements
+                    int x = ar[i] * ar[i], y = ar[j] * ar[j], z = ar[k] * ar[k];
+ 
+                    if (x == y + z || y == x + z || z == x + y)
+                        return true;
+                }
+            }
+        }
+The Time Complexity O(n3). 
+Auxiliary Space: O(1)
+
+Method 2 (Use Sorting) 
+We can solve this in O(n2) time by sorting the array first. 
+1) Do the square of every element in the input array. This step takes O(n) time.
+2) Sort the squared array in increasing order. This step takes O(nLogn) time.
+3) To find a triplet (a, b, c) such that a2 = b2 + c2, do following. 
+
+i.Fix ‘a’ as the last element of the sorted array.
+ii.Now search for pair (b, c) in subarray between the first element and ‘a’. A pair (b, c) with a given sum can be found in O(n) time using the meet in middle algorithm discussed in method 1 of this post.
+iii.If no pair is found for current ‘a’, then move ‘a’ one position back and repeat step 3.2.
+
+// Note that this function modifies given array
+    static boolean isTriplet(int arr[], int n)
+    {
+        // Square array elements
+        for (int i = 0; i < n; i++)
+            arr[i] = arr[i] * arr[i];
+ 
+        // Sort array elements
+        Arrays.sort(arr);
+ 
+        // Now fix one element one by one and find the other two
+        // elements
+        for (int i = n - 1; i >= 2; i--) {
+            // To find the other two elements, start two index
+            // variables from two corners of the array and move
+            // them toward each other
+            int l = 0; // index of the first element in arr[0..i-1]
+            int r = i - 1; // index of the last element in arr[0..i-1]
+            while (l < r) {
+                // A triplet found
+                if (arr[l] + arr[r] == arr[i])
+                    return true;
+ 
+                // Else either move 'l' or 'r'
+                if (arr[l] + arr[r] < arr[i])
+                    l++;
+                else
+                    r--;
+            }
+        }
+ 
+        // If we reach here, then no triplet found
+        return false;
+    }
+The time complexity of this method is O(n2).
+Auxiliary Space: O(1)
+
+Method 3 – A better hashing based approach:
+
+ static boolean checkTriplet(int[] arr, int n) {
+        // loop through each element in the array and square it
+        for (int i = 0; i < n; i++) {
+            arr[i] = arr[i] * arr[i];
+        }
+ 
+        // sort the array
+        Arrays.sort(arr);
+ 
+        // loop through each element in the array starting from the last index
+        for (int i = n - 1; i > 1; i--) {
+            HashSet<Integer> s = new HashSet<>();
+            // loop through each element from the current index to the first index
+            for (int j = i - 1; j >= 0; j--) {
+                // check if the difference between the current element and the previous element is present in the set
+                if (s.contains(arr[i] - arr[j])) {
+                    return true;
+                }
+                // add the previous element to the set
+                s.add(arr[j]);
+            }
+        }
+        return false;
+    }
+Time Complexity: O(n2)
+ Auxiliary Space: O(n)
+
+*************************************************************************************************************
+
+### Do syntax checking for any Program written in a file
+***************************************************************************************************************
 8. Took the same question to next difficulty level, added brackets inside Quotes
 9. any questions?
 - A. I would really like to know the Optimized solution to the pythagorean triples
+***********************************************************************************************************************
