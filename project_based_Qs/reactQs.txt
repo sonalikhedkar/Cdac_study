@@ -1,0 +1,10 @@
+1.e.preventDefault():
+The e.preventDefault() method is used in React (and JavaScript in general) to prevent the default behavior of an event.
+
+const handleSubmit = (event) => {
+  event.preventDefault(); // Prevent the default form submission behavior
+  
+  // Perform custom form submission logic here
+  // For example, sending data to a server, updating state, etc.
+};
+********************************************************************8
