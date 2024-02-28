@@ -1,4 +1,4 @@
-1.e.preventDefault():
+Q1. e.preventDefault() explain this line
 The e.preventDefault() method is used in React (and JavaScript in general) to prevent the default behavior of an event.
 
 const handleSubmit = (event) => {
@@ -7,4 +7,23 @@ const handleSubmit = (event) => {
   // Perform custom form submission logic here
   // For example, sending data to a server, updating state, etc.
 };
-********************************************************************8
+**********************************************************************
+Q2. import Swal from "sweetalert2";
+
+->Swal is a shorthand for the SweetAlert2 library, which provides beautiful, customizable, and easy-to-use modal dialogs (popups) for web applications.
+->Swal to display various types of modal dialogs, such as alerts, confirmations, prompts, etc., with customized content, styling, and behavior.
+example :
+Swal.fire({
+  icon: 'success',
+  title: 'Hello!',
+  text: 'This is a success message!',
+});
+*********************************************************************************
+Q3.jsx file 
+In React, JSX (JavaScript XML) is a syntax extension that allows you to write HTML-like code within your JavaScript code.
+JSX files are simply JavaScript files that contain JSX syntax. JSX makes it easier and more intuitive to write React components by combining JavaScript and HTML-like syntax.
+******************************************************
+Q4.localStorage:
+localStorage is a part of the Web Storage API in web browsers. It provides a way to store key-value pairs locally within the user's browser. 
+Scope:
+Data stored in localStorage is scoped to the origin (i.e., the combination of protocol, domain, and port) of the website. This means that data stored by one website cannot be accessed by another website, even if they are on the same domain.
