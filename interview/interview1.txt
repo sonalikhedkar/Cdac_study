@@ -1,0 +1,99 @@
+Q1.Any other paradigam than OOPS:
+
+
+Functional programming paradigms:
+
+
+Procedural programming paradigm – 
+
+This paradigm emphasizes on procedure in terms of under lying machine model. There is no difference in between procedural and imperative approach. It has the ability to reuse the code and it was boon at that time when it was in use because of its reusability.
+
+*****************************************
+Q2.types of Jdbc Driver:
+
+->Java Database Connectivity (JDBC) is an application programming interface (API)
+Type-1 driver or JDBC-ODBC bridge driver
+Type-2 driver or Native-API driver
+Type-3 driver or Network Protocol driver
+Type-4 driver or Thin driver:
+type 4  jdbc driver used in project
+This driver interact directly with database.
+
+*****************************************
+
+Q3.Application server vs Web server:
+->Web servers and application servers are the technologies that allow the exchange of data and services over the internet. 
+
+---Web servers deliver static content, like HTML pages, images, videos, and files. 
+---Application servers deliver dynamic content, like real-time updates, personalized information, and customer support.
+
+->The client-server architecture is the underlying mechanism of the internet. 
+->When you visit a website or application, your browser (as the client) requests data from a remote server and displays the response. 
+A web server is a software component that delivers static data like images, files, and text in response to client requests. 
+An application server adds business logic to compute the web server's response. Both terms are used synonymously, and the most popular server software solutions today are hybrid web application servers.
+
+******************************************************
+Q4.final and finally:
+
+-> final is an access modifier, 
+->finally is the block in Exception Handling 
+->finalize is the method of object class.
+
+******************************************************
+Q5.system.exit in try then will finally execute:
+
+try {
+    //Code
+    System.exit(0)
+}
+catch (Exception ex) {
+    //Log the exception
+}
+finally {
+    System.exit(1)
+}
+->System.exit(int) can throw a SecurityException
+
+in this scenario, the finally block will still execute after the System.exit(0) line, but the System.exit(1) line within the finally block will not be executed because the program has already been terminated due to System.exit(0).
+->The exception propagates up, and should be handled at a higher level. If the exception is not handled at the higher level, the application crashes. The "finally" block execution stops at the point where the exception is thrown.
+
+
+Q6.access specifiers and their real life examples
+
+1. If you make this status visible for Public, anyone can see this status on Internet (Anyone On or Off Facebook). [Public Access Specifiers]
+2. If you make this status visible "only for me". No one can see this status except you. [Private Access Specifiers]
+3. If you make this status visible for Friends or Friends of friends, then your status will be only visible for your friends and your friends friends. Not everyone presents on Facebook or Internet. [Protected Access Specifiers]
+*****************************************************
+Q7.thymleaf:
+
+Thymeleaf is a Java XML/XHTML/HTML5 template engine that can work both in web and non-web environments. It is better suited for serving XHTML/HTML5 at the view layer of MVC-based web applications, but it can process any XML file even in offline environments. It provides full Spring Framework integration.
+**********************************************************
+Q8.Inversion of control
+
+Inversion of Control is a principle in software engineering which transfers the control of objects or portions of a program to a container or framework.
+->apllication context in spring is bean container.
+We can achieve Inversion of Control through various mechanisms such as: Strategy design pattern, Service Locator pattern, Factory pattern, and Dependency Injection (DI).
+-->ApplicationContext represents the IoC container
+*************************************************************************
+Q9.Spring container 
+org.springframework.context.ApplicationContext interface represents the Spring IoC container and is responsible for instantiating, configuring, and assembling the beans.
+
+********************************************************
+Q10.What are CRUD operations 
+
+i.CREATE procedures: Performs the INSERT statement to create a new record in SQL databases.
+ii.READ procedures: Reads the table records based on the primary keynoted within the input parameter.
+iii.UPDATE procedures: Executes an UPDATE statement on the table based on the specified primary key for a record within the WHERE clause of the statement.
+iv.DELETE procedures: Deletes a specified row in the WHERE clause.
+*****************************************************************
+Q11.Can exception be thrown in finally block
+If there is an exception pending (when the try block has a finally but no catch), the new exception replaces that one.
+
+If there is no exception pending, it works just as throwing an exception outside the finally block.
+
+*******************************************************************
+Q12.
+
+
+
+
