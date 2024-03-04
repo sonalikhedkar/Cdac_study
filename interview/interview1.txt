@@ -1,3 +1,4 @@
+cdac-->
 Q1.Any other paradigam than OOPS:
 
 
@@ -57,7 +58,7 @@ finally {
 in this scenario, the finally block will still execute after the System.exit(0) line, but the System.exit(1) line within the finally block will not be executed because the program has already been terminated due to System.exit(0).
 ->The exception propagates up, and should be handled at a higher level. If the exception is not handled at the higher level, the application crashes. The "finally" block execution stops at the point where the exception is thrown.
 
-
+***********************************************************************************
 Q6.access specifiers and their real life examples
 
 1. If you make this status visible for Public, anyone can see this status on Internet (Anyone On or Off Facebook). [Public Access Specifiers]
@@ -92,7 +93,716 @@ If there is an exception pending (when the try block has a finally but no catch)
 If there is no exception pending, it works just as throwing an exception outside the finally block.
 
 *******************************************************************
-Q12.
+Q12.Dependency injection, Annotations:
+
+**************************************************
+Q13. Rest vs Soap
+
+REST:
+i.Representational State Transfer
+ii.REST is an architecture style for designing communication interfaces.
+iii.REST API exposes the data.
+iv.REST works only with HTTPS.
+v.REST supports XML, JSON, plain text, HTML.
+
+SOAP:
+i.Simple Object Access Protocol
+ii.SOAP is a protocol for communication between applications
+iii.SOAP API exposes the operation.
+iv.SOAP is independent and can work with any transport protocol.
+v.SOAP supports only XML data exchange.
+
+
+******************************************************
+Q14. Factorial problem
+ 1. Iterative Solution for Factorial in Java:
+
+ static int factorial(int n) 
+    { 
+        int res = 1, i; 
+        for (i = 2; i <= n; i++) 
+            res *= i; 
+        return res; 
+    } 
+
+Time Complexity: O(n)
+
+2. Factorial in Java Using Recursive Method:
+
+static int factorial(int n) 
+    { 
+        if (n == 0) 
+            return 1; 
+  
+        return n * factorial(n - 1); 
+    } 
+
+Time Complexity: O(n)
+**********************************************************************************************************
+Q15.Regarding recursion
+
+ In programming, recursion involves a function calling itself directly or indirectly, enabling the solution of complex problems in a clear and concise manner. 
+
+ // Method to calculate factorial
+    public static int factorial(int n) {
+        // Base case: factorial of 0 is 1
+        if (n == 0) {
+            return 1;
+        }
+        // Recursive case: n! = n * (n-1)!
+        else {
+            return n * factorial(n - 1);
+        }
+    }
+
+Direct Recursion:
+Direct recursion occurs when a function calls itself directly within its body. 
+
+
+Indirect Recursion:
+Indirect recursion occurs when a function calls another function, which in turn calls the first function. 
+*****************************************************************************************
+Q16.disadvantage of recursion
+Stack Overflow:
+  Each recursive call adds a new layer to the stack, which means if the recursion is too deep, it can lead to a stack overflow error. This is because there is a limit to the size of the stack, which varies depending on the system and the settings of the runtime environment.
+
+Memory Usage:
+  Recursion can lead to higher memory usage compared to iterative solutions. This is because each recursive call requires its own execution context to be saved to the stack until the base case is reached and the calls can start returning.
+*****************************************************************************************
+Q17.Which sorting algorithm is best:
+
+For General Use:
+ Quick Sort is often considered the best due to its efficiency in handling large datasets and its 
+O(nlogn) average time complexity.
+
+For Stability and Large Data: 
+Merge Sort is preferred when stability is required or when working with large datasets, despite its 
+O(n) space requirement.
+
+For Small or Nearly Sorted Data:
+-> Insertion Sort is excellent, offering simplicity and efficiency.
+
+Each algorithm has its strengths and is "best" within its suitable context.
+# Quick Sort is generally preferred for its overall efficiency and performance on a wide range of datasets, making it a popular choice for general-purpose sorting in many programming libraries and systems. 
+# However, the choice of algorithm should always be tailored to the specific requirements and constraints of the application, including dataset size, memory limitations, and whether or not stability is a concern.
+
+***********************************************************************************************
+Q18.If i want faster sorting regardless of space then which one is best :
+
+If speed is your primary concern and space considerations are secondary or irrelevant, Quick Sort often emerges as the best choice for several reasons:
+
+Efficiency: Quick Sort has an average-case time complexity of O(nlogn), which is on par with other efficient sorting algorithms like Merge Sort and Heap Sort. However, its constant factors are lower, and it typically outperforms these other 
+O(nlogn) algorithms in practice due to better cache performance and the ability to efficiently handle a wide range of data distributions.
+
+*******************************************************************************************
+
+Q19.Difference between encapsulation and abstraction :
+*******************************************************************************************************
+Q20.Inheritance disadvantage:
+i.Tight Coupling: 
+Inheritance can lead to tight coupling between classes, where subclasses are highly dependent on the implementation details of their superclasses. This can make the codebase more rigid and harder to maintain or modify.
+ii.Limited Reusability: 
+Inheritance commits subclasses to a specific superclass, limiting their reusability in situations where they need to inherit from multiple sources or when the inheritance hierarchy needs to change.
+#use interfaces to define contracts instead of relying solely on inheritance
+***********************************************************************************
+Q21.what is abstraction:
+->abstraction simplifies complex systems by hiding unnecessary details, allowing users to interact with them at a higher level of understanding. This makes systems easier to use, maintain, and scale.
+
+Internet: 
+The internet itself is built upon layers of abstraction. When you access a website, you don't need to understand the intricacies of data routing, TCP/IP protocols, or the physical infrastructure of servers and routers. You interact with the website through a browser, which abstracts away these underlying complexities.
+
+******************************************************************************************
+Q22. what is inheritance
+ ->new class (subclass or derived class) is created by inheriting attributes and behaviors (methods) from an existing class (superclass or base class). 
+->Inheritance allows for the creation of a hierarchy of classes, where subclasses can reuse and extend the functionality of their parent classes.
+
+-> Employee --Manager wage employee,salesman
+->Vehicle --Car,MotorCycle,jip,truck
+************************************************************************
+Q23.why multiple inheritance is not allowed in java
+
+->In multiple inheritance class can inherit properties and behavior from more than one superclass. 
+->While multiple inheritance can offer flexibility in certain scenarios, 
+->it also introduces complexities and potential issues, which is why Java doesn't support it directly.
+->Diamond Problem: 
+One of the primary concerns with multiple inheritance is the "diamond problem," which occurs when a subclass inherits from two superclasses that have a common superclass. 
+
+********************************************************************************
+Q24.what is JWT  
+->JWT stands for JSON Web Token. 
+-> JWT are typically used to authenticate and authorize users.
+
+i.Authentication:
+--Users provide credentials (such as username/password, biometric data, API token, etc.).
+--Verify the provided credentials against stored credentials in your system.
+--If the credentials match, the user is considered authenticated.
+
+#Token-based Authentication:
+--Users obtain a token (JWT, OAuth token, etc.) through a separate authentication process.
+--The token is sent with each request to authenticate the user.
+
+ii.Authorization:
+--Determine what actions or resources the authenticated user is allowed to access.
+--Check the user's permissions and roles.
+--Grant or deny access based on these permissions.
+
+# Structure of a JWT:
+i.Header: 
+The header typically consists of two parts: the type of the token, which is JWT, and the signing algorithm being used, such as HMAC SHA256 or RSA.
+example:
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+ii.Payload: 
+The payload contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims: registered, public, and private claims.
+example:
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "admin": true
+}
+iii.Signature: 
+To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
+
+##Usage
+When a user logs in using their credentials, a JWT can be returned. Since the JWT contains all necessary information or claims about the user, it can be used by the client in subsequent requests to authenticate the user without having to send the username and password again. The server then validates the JWT signature to ensure it's valid and hasn't been tampered with.
+
+## Ensure the JWT is stored securely on the client side (e.g., in an HTTP-only cookie).
+## Always use HTTPS to prevent man-in-the-middle attacks.
+
+### man-in-the-middle attacks:
+-> Man-in-the-Middle (MitM) attacks are a form of cyber eavesdropping in which the attacker intercepts and possibly alters the communication between two parties who believe they are directly communicating with each other.  
+****************************************************************************************************
+Q25.about Spring security
+->Spring Security is a powerful and customizable authentication and access-control framework that is part of the broader Spring Framework, designed to secure Java applications.
+->Spring Security is a framework that focuses on providing both authentication and authorization to Java applications.
+--Spring Security supports a variety of authentication mechanisms, including form-based authentication, HTTP Basic authentication, LDAP, OAuth2, JWT, and more. It allows the application to control how users are authenticated.
+
+********************************************************************************************************
+Q26.Why JWT:
+There is extensive support for JWT across many programming languages and platforms, including Java, JavaScript, PHP, Python, C#, Ruby, and more. This widespread support makes it easier for developers to implement JWT in their applications, regardless of the technology stack.
+************************************************************************************************
+Q27.. explain complete flow of request response with react and springboot
+
+these two technologies interact over the HTTP protocol.
+i.Initial Page Load
+Client Side (React):
+ When a user first visits a React application, their browser makes a request to the server hosting the React app. This is usually a simple GET request for the index.html file of the React application.
+Server Side (Spring Boot): 
+If the React application is served by a Spring Boot application, Spring Boot responds with the index.html file, along with the necessary JavaScript, CSS, and other static assets required to load the React application. This part of the process does not involve any dynamic content; Spring Boot is simply serving static files.
+
+ii. React Application Initialization
+After the initial load, the React application initializes in the user's browser. The React SPA (Single Page Application) takes over the browser's rendering, turning the application into an interactive experience that does not require full page reloads for navigation or updates.
+
+iii. Making an API Request
+React Side: When the user interacts with the React application in a way that requires data from the server (for example, listing the latest posts in a blog application), React makes an HTTP API request to the Spring Boot back end. This is typically done using the Fetch API or libraries like Axios.
+
+iv. Handling the Request in Spring Boot
+Spring Boot Side:
+ The Spring Boot application receives the API request. The request is routed to the appropriate controller based on the URL and HTTP method of the request. The controller processes the request, which may involve interacting with a database or other services, to gather the required data.
+Spring Boot Side: 
+After processing the request, the Spring Boot application prepares a response. This usually involves creating a JSON representation of the data that was requested.
+
+v. Sending the Response Back to React
+Spring Boot Side:
+ Spring Boot sends the response back to the React application. This response includes the requested data in JSON format, along with HTTP status codes and headers.
+React Side:
+ The React application receives the response. It parses the JSON data and updates the UI accordingly. For example, displaying the latest posts retrieved from the Spring Boot application.
+
+vi. React Updates the UI
+Based on the data received, React updates the components that need to be re-rendered to reflect the new data. This is done efficiently because of React's virtual DOM, ensuring a smooth user experience
+#########################
+When you create a controller in Spring Boot intended for REST APIs, you typically annotate it with @RestController. This is a convenience annotation that combines @Controller and @ResponseBody.
+The @ResponseBody annotation tells Spring that the return value of a method should be bound to the web response body, triggering the serialization process of converting objects to JSON.
+
+*************************************************************************************************************************
+Q28. Annotations used in springboot:
+
+##Core Spring Framework Annotations:
+
+@SpringBootApplication:
+-> A convenience annotation that adds all of the following:
+@Configuration: 
+->Tags the class as a source of bean definitions for the application context.
+@EnableAutoConfiguration:
+-> Tells Spring Boot to start adding beans based on classpath settings, other beans, and various property settings.
+@ComponentScan: 
+->Tells Spring to look for other components, configurations, and services in the specified package, allowing it to find controllers.
+@Bean:
+-> Marks a method as a bean producer, so its return value gets registered as a bean in the application context.
+@Component:
+-> Indicates that a class is a "component". Such classes are considered as candidates for auto-detection when using annotation-based configuration and classpath scanning.
+@Service:
+-> Indicates that an annotated class is a "Service", originally defined by Domain-Driven Design (DDD) as a form of domain-specific operation.
+@Repository: 
+-> Indicates that an annotated class is a "Repository", mainly used in the persistence layer.
+@Controller: 
+-> Indicates that an annotated class is a "Controller" (e.g., a web controller).
+@RestController: 
+->A convenience annotation that combines @Controller and @ResponseBody, which eliminates the need to annotate every request handling method of the controller class with @ResponseBody.
+
+## Web Layer Annotations:
+@RequestMapping: 
+->Annotation for mapping web requests onto methods in request-handling classes. It can be applied to class-level and method-level in a controller.
+
+@GetMapping, @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping: These are specialized versions of @RequestMapping that act as shortcuts for specifying HTTP methods.
+
+## Data Access Layer Annotations
+@Entity:  Marks a class as an entity in JPA (Java Persistence API).
+@Table:  Specifies the primary table for the annotated entity in JPA.
+@Id:  Marks a field as a primary key in a JPA entity.
+@GeneratedValue: Specifies how to generate values for the primary key field in JPA.
+@Column: Specifies the column in the database that is mapped to the annotated field.
+@Transactional: Describes a transaction attribute on an individual method or on a class.
+******************************************************************************************************
+Q29.. What is components in react and types of components:
+
+In React, components are the building blocks of user interfaces. They are reusable and encapsulated pieces of code that manage their own state and can accept inputs (called props) to customize their behavior and appearance. Components can be either functional components or class components.
+***********************************************************************************************
+Q30. When to use which component and about react hooks
+Functional Components:
+->Use functional components for simple UI components that don't require state or lifecycle methods.
+->Use them when you need a lightweight and easy-to-understand component.
+
+Class Components:
+->Use class components when you need to manage state or use lifecycle methods.
+->Use them for more complex UI components that require state management, event handling, or side effects.
+
+## Regarding React Hooks:
+ ->introduced in React 16.8, they provide a way to use stateful logic and lifecycle features in functional components without using class components. 
+->Hooks allow you to use state and other React features without writing a class.
+useState: Allows functional components to have local state.
+useEffect: Allows functional components to perform side effects (such as data fetching or DOM manipulation) after render.
+**************************************************************************************************************
+Q31.react life cycle methods
+i.componentDidMount():
+ This method is called after the component has been rendered to the DOM. It's often used for making AJAX requests or interacting with the DOM or other JavaScript frameworks.
+ii.componentDidUpdate(prevProps, prevState):
+iii.componentWillUnmount():
+
+************************************************************************************
+Q32.. what is reactive designe
+->Reactive design, also known as reactive programming or reactive architecture
+->Responsive
+Examples:
+Single Page Applications (SPA): SPA frameworks like React.js 
+***********************************************************************************************************
+Q33.what is flexbox
+
+->Flexbox, short for Flexible Box Layout, is a layout model in CSS designed for creating more efficient and responsive layouts in web applications. 
+-> It provides a flexible way to distribute space and align items within a container, regardless of their size or order.
+-> Flexbox is particularly useful for building dynamic and complex layouts with a minimal amount of CSS code.
+
+*****************************************************************************************************
+Q34. What is redundancy in database
+
+->In the context of databases, redundancy refers to the duplication of data within a database system. 
+->For example, if the same customer information is stored in both a "Customers" table and an "Orders" table, it represents data redundancy.
+->It can happen when there are multiple tables storing similar types of data with similar attributes.
+->Data Inconsistency: When the same data is duplicated across multiple locations, there's a risk that it may be updated in one place but not in others, leading to inconsistencies.
+****************************************************************************************
+Q35. What are Normalization rules:
+Normalization rules, also known as normal forms, are a set of guidelines used in database design to structure relational databases in a way that minimizes redundancy and dependency. 
+
+First Normal Form (1NF):
+->Each table cell should hold a single value, i.e., it should be atomic.
+->Each column in a table should contain only values of the same data type.
+
+Second Normal Form (2NF):
+->The table must be in 1NF.
+->All non-key attributes (columns) must be fully functionally dependent on the entire primary key, meaning no partial dependencies exist.
+->If a composite key exists, each non-key attribute should depend on the entire composite key, not just part of it.
+
+Third Normal Form (3NF):
+->The table must be in 2NF.
+->All non-key attributes must be directly dependent on the primary key (no transitive dependencies).
+
+Fourth Normal Form (4NF):
+******************************************************************************************************************************
+Q36. joins
+
+## INNER JOIN:
+Ex.SELECT * 
+FROM table1
+INNER JOIN table2 ON table1.column_name = table2.column_name;
+
+## LEFT JOIN (or LEFT OUTER JOIN): 
+->Returns all rows from the left table and the matched rows from the right table. If there's no match, NULL values are returned for the columns from the right table.
+
+## RIGHT JOIN (or RIGHT OUTER JOIN): 
+->Returns all rows from the right table and the matched rows from the left table. If there's no match, NULL values are returned for the columns from the left table.
+
+********************************************************************************************************************
+Q37. Hash map internals:
+i.HashMap internally stores its data in an array of linked lists
+ii.Each element of the array is called a "bucket," and each bucket can contain multiple key-value pairs if there are collisions.
+iii.When a key-value pair is added to the HashMap, the key's hash code is computed using its hashCode() method.
+iv.The hash code is then transformed using an internal hashing function to determine the index (bucket) where the key-value pair will be stored in the array.
+
+
+**************************************************************************************
+Q38.when & how collision occurs in hashing based data structures
+*******************************************************************************
+Q39.why classes are used, 
+->Classes are used in object-oriented programming (OOP) languages like Java, Python, C++, and others to encapsulate data and behavior into a single unit.
+Encapsulation: Classes encapsulate data (attributes or fields) and methods (functions or procedures) into a single unit
+Abstraction: Classes provide a way to represent real-world entities or concepts in code.
+inheritance and polymorphism feature
+**********************************************************************************************************
+Q40.use cases of inheritance, 
+->Inheritance is a fundamental concept in object-oriented programming (OOP) that allows classes to inherit attributes and methods from other classes
+#Code Reuse: One of the primary use cases of inheritance is code reuse. When multiple classes share common attributes and methods, instead of duplicating the code in each class, you can create a base class (or superclass) that contains the common functionality. Subclasses can then inherit from the base class, allowing them to reuse the code and extend or customize it as needed.
+##
+Inheritance facilitates polymorphism, which allows objects of different classes to be treated as objects of a common superclass. This enables more flexible and extensible code by allowing methods to be invoked on objects of different types without knowing their specific implementations.
+#Changes made to the superclass are automatically inherited by its subclasses, reducing the need for duplicate code and ensuring consistency across related classes.
+**********************************************************************************************************
+Q41.linux commands
+kill: Terminate a process.
+ps: Display information about active processes.
+chown: Change file ownership.
+chmod: Change file permissions
+grep: Search for a pattern in a file.
+head: Display the first few lines of a file.
+tail: Display the last few lines of a file.
+****************************************************************
+Q42.use of bashrc file, 
+The .bashrc file is a script that runs every time a new terminal session is started in interactive mode using the Bash shell. It's a configuration file that allows users to customize their Bash environment.
+->Alias Creation: 
+Users can create aliases for long commands to save time. 
+->Environment Variables:
+ It's used to set environment variables that should be available in the user session. For example, adding directories to the PATH variable or defining custom variables.
+*****************************************************************************
+Q43.data structure used in major project
+1. Arrays and Lists
+Usage: Storing and accessing a sequence of elements.
+Projects: Almost all projects can utilize arrays or lists at some level, from simple CRUD (Create, Read, Update, Delete) applications to complex scientific computations.
+
+2.Stacks
+Usage: Last-In-First-Out (LIFO) operations.
+Projects: Undo mechanisms in applications, parsing expressions (e.g., in compilers), backtracking algorithms (e.g., maze solvers, syntax checking).
+
+3. Graphs
+Usage: Representing and navigating relationships.
+Projects: Social networks, recommendation systems, routing and navigation applications, network analysis.
+
+4.Trees
+Binary Search Trees (BST): Ordered data storage and retrieval.
+Balanced Trees (AVL, Red-Black Trees): Maintaining sorted data with efficient operations.
+B-Trees and B+ Trees: Database indexing and file storage.
+Projects: Any application requiring sorted data operations, databases, file systems.
+
+5. Heaps
+Usage: Managing priority queues, efficient minimum or maximum element retrieval.
+Projects: Scheduling algorithms (e.g., operating systems), simulation systems, bandwidth management.
+************************************************************************************************
+Q44.Difference between JS and JSX
+
+JavaScript (JS):
+-> JavaScript is a programming language that is used to create interactive and dynamic websites. It is one of the core technologies of the web, alongside HTML and CSS.
+->JavaScript can also run on servers (e.g., Node.js) or in non-web environments like desktop and mobile app development through various frameworks.
+
+JSX (JavaScript XML)
+->JSX is a syntax extension for JavaScript. It was developed by Facebook and is used primarily with React to describe what the UI should look like. JSX allows you to write HTML structures in the same file as your JavaScript code, making the code more readable and expressive.
+->JSX is specific to the React library (though other libraries can adopt or adapt it) and is used to define the structure and content of React components. Before it can be run in a browser, JSX code must be transformed into regular JavaScript, usually using a transpiler like Babel.
+
+##JavaScript is a general-purpose scripting language that can be used across many domains, while JSX is specifically designed to describe UI components within React applications.
+************************************************************************************************
+Q45. What is Babel
+->Babel is a JavaScript compiler. It is a popular tool used in modern JavaScript development workflows for converting ECMAScript 2015+ (ES6+) code into a backwards compatible version of JavaScript that can be executed in older browsers or environments that may not yet support the latest JavaScript features.
+->Babel allows developers to write code using the latest JavaScript syntax and features, such as arrow functions, template literals, destructuring assignments, and more, without worrying about compatibility issues with older browsers or environments.
+************************************************************************************************************
+Q46. What is the difference between JDBC and JPA
+ JDBC (Java Database Connectivity) and JPA (Java Persistence API) are both Java technologies used for working with databases
+
+## JDBC (Java Database Connectivity):
+->JDBC is a low-level API for interacting with relational databases from Java programs.
+->It provides a set of classes and interfaces for performing database operations such as connecting to databases, executing SQL queries, and processing query results.
+->With JDBC, developers have fine-grained control over database interactions, including the ability to write custom SQL queries and manage database transactions manually.
+
+## JPA (Java Persistence API):
+->JPA is a higher-level API that provides a mechanism for Java applications to interact with databases in an object-oriented way.
+->It simplifies database operations by abstracting away the details of JDBC and providing a set of annotations and APIs for mapping Java objects to database tables (ORM - Object-Relational Mapping).
+->JPA implementations, such as Hibernate
+
+*********************************************************************************************************************************
+Q47.How to select top 5 records in a table using JPA
+
+To select the top 5 records from a table using JPA, you can use JPQL (Java Persistence Query Language) with the SELECT statement and ORDER BY clause
+
+@Query(value="SELECT  * FROM table ORDER BY anyField DESC LIMIT 5", nativeQuery = true)
+List<table> getTopFive();
+***********************************************************************************************
+Q48.Difference between @Controller and @RestController:
+##
+@RestController
+@RestController is a specialized version of the @Controller annotation that is a convenience annotation for creating RESTful controllers. It is annotated with @Controller and @ResponseBody implying that every method in the controller class automatically serializes return objects into HttpResponse bodies.
+It is typically used for services that return JSON or XML responses.
+
+##@Controller is a more general-purpose annotation that indicates the class is a Spring MVC controller.
+Classes annotated with @Controller are capable of handling requests and returning responses. However, the response can be either a view name (String) pointing to a template (like a JSP file in traditional Spring MVC applications) or a ResponseEntity 
+*****************************************************************************************************
+Q49..What is a webserver
+ web server can refer to either software or hardware that uses HTTP (Hypertext Transfer Protocol) and other protocols to respond to client requests made over the World Wide Web.
+fixed IP and Port and continuously listening for request.
+********************************************************************************
+
+Q.50..How to deploy project w/o using git
+
+ ## Cloud Storage Services
+For cloud-based environments (AWS, Google Cloud, Azure), you can upload your project files to a storage service (e.g., Amazon S3, Google Cloud Storage) and then deploy them to your environment.
+
+Process: Upload your compressed project to the storage service, then use the cloud provider's tools or console to deploy the application to a virtual machine, container service, or serverless environment.
+ 
+## Containerization
+If your project is containerized using Docker or another container platform, you can build an image and run it on any server that supports containers.
+
+Tools Needed: Docker or compatible software.
+
+Process: Build your Docker image locally, save it as a tar file, transfer it to your server, and then load and run it with Docker.
+*************************************************************************************************
+Q51.How does a webserver know what domain name to go to:
+Domain Name Resolution: The browser initiates a DNS query to translate the domain name (e.g., www.example.com) into an IP address. This query typically goes through several stages, including your local cache, your router, your ISP's DNS server, and possibly higher-level DNS servers, until it finds the authoritative DNS server for the domain, which provides the corresponding IP address.
+IP Address Response: The DNS system returns the IP address of the server associated with the domain name back to your browser.
+********************************************************************************
+Q52. .When to use Rest API"
+It allows clients to access and manipulate server resources through well-defined endpoints using HTTP methods (GET, POST, PUT, DELETE).
+->Web Application Development:
+ REST APIs are essential for building modern web applications that require dynamic content and interactivity. They enable frontend web applications to communicate with backend servers, fetching data and updating the user interface asynchronously.
+->REST APIs are integral to microservices architecture, where applications are built as a collection of loosely coupled services
+********************************************************************************************************************************
+Q 53.What is singlepage application
+A Single Page Application (SPA) is a type of web application that operates within a single web page, offering a more dynamic and responsive user experience.
+->SPAs load all necessary resources (HTML, CSS, JavaScript) upon the initial page load. 
+->Subsequent interactions with the application are handled dynamically within the same page, usually through AJAX (Asynchronous JavaScript and XML) requests to the server to fetch or submit data.
+->Popular examples of SPAs include Gmail, Facebook, Twitter, and Google Maps. 
+****************************************************************************************************************************
+Q.54.Stored procedures What is inner join, outer join, types of joins 
+
+******************************************************************************************************************************
+Q55.How @query annotation is used how to write
+The @Query annotation is commonly used in frameworks like Spring Data JPA or Hibernate to define custom SQL queries to be executed for specific repository methods.
+example
+i.Using @Query Annotation:
+ @Query("SELECT u FROM User u WHERE u.age > :age")
+    List<User> findByAgeGreaterThan(int age);
+
+ii.Using Native SQL Query:
+@Query(value = "SELECT * FROM users WHERE age > :age", nativeQuery = true)
+    List<User> findByAgeGreaterThan(int age);
+
+******************************************************************************************************
+Q56. What is cursor 
+->A cursor is a database object used to retrieve data from a result set one row at a time. It provides a mechanism for iterating over the rows of a query result set in a controlled and sequential manner. 
+->Cursors are commonly used in database management systems (DBMS) to process large datasets efficiently.
+*********************************************
+
+Q57. Synatax of cursor :
+
+DROP PROCEDURE IF EXISTS getAllStudent;
+delimiter $$
+CREATE PROCEDURE getAllStudent()
+begin
+declare v_ID INT;
+declare v_namefirst, v_namelast VARCHAR(45);
+declare v_dob DATE;
+declare v_emailID VARCHAR(128);
+declare c1 CURSOR FOR SELECT * FROM student;
+declare EXIT HANDLER FOR NOT FOUND SELECT "No more student found";
+OPEN c1;
+lbl: loop
+FETCH c1 INTO v_ID, v_namefirst, v_namelast, v_dob, v_emailID;
+SELECT v_ID, v_namefirst, v_namelast, v_dob, v_emailID;
+end loop lbl;
+CLOSE c1;
+end $$
+delimiter;
+*********************************************************************************
+Q58. What is set list map Diffrence between them
+
+Set:
+->In Java, sets are implemented by the Set interface and its various implementations such as HashSet, TreeSet, and LinkedHashSet.
+A set in Java contains unique elements;
+-> it does not allow duplicates.
+->Sets do not maintain the order of elements.
+Ex.Set<String> mySet = new HashSet<>();
+
+List:
+->Lists in Java are implemented by the List interface and its implementations such as ArrayList, LinkedList, and Vector.
+->A list is an ordered collection of elements where duplicates are allowed.
+->Lists maintain the order in which elements are inserted.
+Ex.List<String> myList = new ArrayList<>();
+
+Map:
+->Maps in Java are implemented by the Map interface and its implementations such as HashMap, TreeMap, and LinkedHashMap.
+->A map is a collection of key-value pairs where each key is unique.
+->Maps do not maintain the order of elements.
+Ex.Map<String, Integer> myMap = new HashMap<>();
+##
+Sets ensure uniqueness of elements.
+Lists maintain the order of elements and allow duplicates.
+Maps provide a way to associate keys with values and do not allow duplicate keys.
+
+******************************************************
+Q59.What is hashmap hashset and diffrence between them
+
+HashMap:
+->HashMap is an implementation of the Map interface.
+->It stores elements in key-value pairs.
+->It uses a hash table data structure internally for storing and retrieving elements based on their keys.
+->HashMap allows null keys and null values.
+->It does not maintain the insertion order of elements.
+->HashMap allows duplicate values, but keys must be unique. If a duplicate key is inserted, the previous value associated with that key is replaced.
+
+HashSet:
+->HashSet is an implementation of the Set interface.
+->It represents a collection of unique elements.
+->Internally, it uses a hash table mechanism similar to HashMap, but in HashSet, only the elements themselves are stored (without any associated values).
+->HashSet does not allow duplicate elements. If an attempt is made to insert a duplicate element, it simply ignores it.
+->HashSet allows one null element.
+->It does not maintain the insertion order of elements.
+##
+->HashMap stores elements as key-value pairs, while HashSet stores only individual elements.
+->HashMap implements the Map interface, while HashSet implements the Set interface.
+->HashMap allows duplicate values but not duplicate keys, while HashSet does not allow duplicate elements.
+->HashMap is used when you need to associate each element with a unique key, while HashSet is used when you need to store a collection of unique elements without any associated values.
+
+*************************************************************************************
+Q60.What is autowire why it is used 
+
+->context of Spring Framework, "autowiring" is a feature that allows Spring to automatically inject dependencies into a Spring bean without the need for explicit configuration in the XML file or Java configuration.
+-> It is a form of Dependency Injection (DI) where the Spring container resolves the dependencies of a bean automatically at runtime.
+
+->Autowiring is primarily used to simplify the configuration process and reduce the amount of boilerplate code needed for wiring dependencies manually. 
+->Instead of explicitly specifying dependencies in configuration files or Java code, you can simply annotate fields, constructors, or setter methods with @Autowired annotation, and Spring will automatically resolve and inject the dependencies.
+
+***********************************************************************************
+Q61.What is multiple inheritence explain with real life example
+
+he SmartPhone class inherits from both Phone and ElectronicDevice
+***********************************************************************
+Q62.What is string constant pool
+The string constant pool is a special area of memory in the Java Virtual Machine (JVM) where string literals (i.e., strings declared directly in the code) are stored. It's a mechanism used by Java to optimize memory usage and improve performance by reusing string objects.
+
+In Java, when you create a string literal (e.g., "hello"), the JVM checks if the string already exists in the string constant pool. If it does, the reference to the existing string object is returned. If it doesn't exist, a new string object is created and added to the pool. This ensures that identical string literals are stored only once in memory, reducing memory overhead.
+
+********************************************************
+ Q63.difference between string builder and string buffer
+
+Both StringBuilder and StringBuffer are classes in Java that represent mutable sequences of characters.
+
+->StringBuffer is thread-safe, meaning it is designed to be used in multi-threaded environments without causing data corruption or unexpected behavior. All of its methods are synchronized, making it safe for use in concurrent applications.
+
+->StringBuilder is not thread-safe. It does not have synchronized methods, which means it is not safe to use in multi-threaded environments without external synchronization. However, this lack of synchronization makes it more efficient in single-threaded scenarios.
+
+->Use StringBuffer when you need thread safety, such as in multi-threaded environments.
+->Use StringBuilder when you do not need thread safety or when performance is critical, such as in single-threaded scenarios.
+
+***********************************************************************************************
+Q64.What is hash collision and how it can be handled .
+->In hashing, a hash collision occurs when two different inputs to a hash function produce the same hash value. 
+##
+->In separate chaining, each bucket in the hash table is associated with a linked list or another data structure (e.g., an array or tree) to store multiple elements that hash to the same value.
+
+->Common probing techniques include linear probing, quadratic probing, and double hashing.
+With linear probing, for example, if a collision occurs at index i, the algorithm checks the next index (i+1), and then the next, until an empty slot is found.
+
+******************************************************************************
+Q65. Do u know about param supercomputer
+
+->PARAM is a series of Indian supercomputers designed and assembled by the Centre for Development of Advanced Computing (C-DAC) in Pune
+
+->The PARAM 8000 was the first machine in the series and was built from scratch
+->Distributed Memory MIMD, 64 processors
+->PARAM supercomputers are used by both public and private[23] operators for various purposes.
+********************************************************************************************
+Q66.Difference between Linux and window
+->Linux is an open-source operating system, which means its source code is freely available for anyone to use, modify, and distribute. 
+->Windows is a proprietary operating system developed and owned by Microsoft. Its source code is not publicly available, and users must purchase a license to use it.
+
+->Linux is often considered more secure than Windows due to its inherent design principles, such as the use of user permissions, file system permissions, and the separation of privileges. Linux distributions also benefit from rapid security updates and patches provided by the community.
+*************************************************************
+Q67.Heap table
+In database management systems (DBMS), particularly in the context of relational databases, a "heap table" refers to a table structure where records (rows) are stored in no particular order within a data file.
+
+->They are often suitable for scenarios where the order of records doesn't matter, and the primary access pattern involves inserting new records or performing ad-hoc queries without specific ordering requirements. 
+
+***************************************************************
+Q68.Indexing
+
+->Indexes are used to find rows with specific column values quickly. Without an index, MySQL must begin with the 
+first row and then read through the entire table to find the relevant rows. If the table has an index for the columns in 
+question, MySQL can quickly determine the position (from the index file) to seek to in the middle of the data file 
+without having to look at all the data. This is much faster than reading every row sequentially
+
+• Index is a schema object.
+• it is used by the server to speed up the retrieval of rows.
+ Ex. CREATE INDEX indexOnName ON emp(ename)
+
+*****************************************
+Q69.Differnce between Varchar and char 
+CHAR (Character Fixed Length)
+->For example, CHAR(10) reserves exactly 10 characters for each entry in the column.
+VARCHAR (Character Varying Length)
+->For example, VARCHAR(255) can store up to 255 characters, but if you store a 10-character string, it will only use space for those 10 characters (plus possibly an additional byte or two to store the length of the data).
+
+*************************************************************************
+Q70.Candidate key and Primary key 
+
+• Candidate Key: are individual columns in a table that qualifies for uniqueness of all the rows. Here in Employee 
+table EmployeeID, PAN or emailID are Candidate keys.
+
+• Primary Key: is the columns you choose to maintain uniqueness in a table. Here in Employee table you can 
+choose either EmployeeID, PAN or emailID columns, EmployeeID is preferable choice.
+
+• Alternate Key: Candidate column other the primary key column, like if EmployeeID is primary key then , PAN 
+or emailID columns would be the Alternate key.
+
+• Super Key: If you add any other column to a primary key then it become a super key, like EmployeeID + 
+FullName is a Super Key.
+
+• Composite Key: If a table do not have any single column that qualifies for a Candidate key, then you have to 
+select 2 or more columns to make a row unique. Like if there is no EmployeeID, PAN or emailID columns, then 
+you can make FullName + DateOfBirth as Composite key. But still there can be a narrow chance of duplicate 
+row.
+
+*******************************************************************************************
+linkedList:
+********************************************
+Q71.What is difference between real Dom and virtual Dom?
+
+->the Real DOM is the browser's implementation of the Document Object Model. It is a structured representation of the HTML document that can be modified with JavaScript to dynamically update the browser's displayed page.
+
+->When you change the Real DOM, those changes are immediately reflected in the browser.
+
+->The Virtual DOM is an abstraction of the Real DOM. It is a lightweight copy of the Real DOM in memory, and it's a concept employed by libraries such as React. The Virtual DOM allows for the batching of DOM manipulation operations, minimizing the performance cost associated with changes.
+-> Changes are first made to the Virtual DOM, not directly affecting the browser's displayed page. This allows a framework or library to compare the current state of the Virtual DOM with the previous state and calculate the most efficient way to update the Real DOM.
+
+********************************************************************************************
+Q72.What is jdk jre jvm?
+JVM: Provides the environment required to execute Java bytecode on any platform.
+JRE: Contains the JVM and the libraries and components needed for running Java applications.
+JDK: Includes everything in the JRE plus development tools for developing Java applications.
+
+********************************************************************************
+
+Q73.Is jvm machine dependent? 
+Yes, the JVM (Java Virtual Machine) is machine-dependent, which means its implementation varies depending on the underlying hardware and operating system.
+
+***************************************************************
+Q74.Difference between callable and prepared statement?
+
+->PreparedStatement is used for executing SQL statements with or without input parameters
+->CallableStatement is used to execute stored procedures in a database. Stored procedures are precompiled SQL statements stored in the database that can be executed as a single unit.
+
+***********************************************************************
+Q75.What are different SDLC models ? 
+waterfall
+Agile Model
+***************************************************
+Q76.What are the build tools ? Can you explain maven?
+
 
 
 
