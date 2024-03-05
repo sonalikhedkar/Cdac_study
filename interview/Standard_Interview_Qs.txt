@@ -1,0 +1,204 @@
+Standard Interview questions:
+start always with greetings:
+Good morning /afternoon/evening sir/mam
+thank for giving this apportunity to me
+*******
+Q1.Tell me about yourself??
+
+As a mention in my cv myself sonali khedkar
+I have done my graduation in Information Technology from GECA from chattrapati sabhaji nagar
+ I've actively participated in coding challenges on platforms like HackerRank, where I've achieved a strong score my badges in java is gold level and problem solving is silver level. i shifted me to leetcode and continusly building my problem solving skills.
+*** in cdac course I am topper in core java module.
+I have always been passionate about software development field, which has led me to experience about solving real time problems. and that makes me excited .
+Throughout education, I've developed a strong skill set in software development and have consistently sought out opportunities for growth and learning. I believe in work with sense of passion, and I'm excited about the possibility of bringing my unique perspective and contributions to [company/organization name]."
+
+*****************************************************************
+Q2.B.Tech project:
+i.Application for managing Student Document in  modern and secure  way using Ethereum Blockchain.
+ii.Technology used -
+ReactJs, Ethereum Blockchain, Solidity
+iii.Tools used -IPFS,Metamask,Ganche
+
+solidity is technology used to write smart contracts in ethereum blockchain
+#IPFS is an open system to manage data without a central server
+
+#MetaMask is a software cryptocurrency wallet used to interact with the Ethereum blockchain. It allows users to access their Ethereum wallet through a browser extension or mobile app, which can then be used to interact with decentralized applications.
+
+# Ganche enabling you to develop, deploy, and test your dApps in a safe and deterministic environment.
+What was unique in our Engineering project?
+
+************************************************************************
+Q3.#### Project Based Questions
+## .What is your role
+##
+Q.How did you handle exceptions in your project:
+#
+throwing exceptions, provide meaningful messages and, if necessary, custom exception types. This can greatly aid in debugging and providing useful feedback to the user or developers.
+##
+Global Exception:
+->handling exceptions across the whole application in a single global handling component
+->ResponseEntityExceptionHandler, a convenient base class provided by Spring MVC for handling exceptions across the whole application in a single global handling component. 
+->The purpose of this code is to provide a centralized way to handle UserHandlingException exceptions across the Spring application. When such an exception is thrown, this handler will catch it and respond with a structured error message and a 404 Not Found status code. This approach helps in keeping the exception handling logic consistent and clean across the application, and also provides a clear response to the client when something goes wrong.
+
+
+
+### Did you work on back-end, front-end or both 
+both
+
+ 1. Introduce the project:
+
+our project Pet Wellness Hub project 
+basically aims to create a comprehensive platform that provides a centralized and user-friendly space for accessing essential pet-related services, information, and community support. 
+It supports pet owners in managing the health, well-being, and overall care of their pets.
+
+2. Describe the project modules:
+this project have main three entities Admin Provider and Customer
+Admin :manages providers and able to see the all the customers and products present on application
+admin can remove regesiterd provider in case of uncertainty
+Provider:
+provider provides services of breeding ,veternary, hostel and trainer
+i.products: food and grooming products for pets
+
+3. Detail the purpose and function of the project:
+
+forgot password:
+smtp server email register
+
+
+4. Talk about the tools you used
+spring boot :
+JPA
+FrontEnd Reactjs 
+5. Explain your contribution to the project
+6. Mention challenges and how you overcame them
+forgot password smtp:
+
+http method mapping :controller mapping gives properly
+
+
+7. Highlight your teamwork skills
+8. Note the duration of the project
+9. Address the benefits and disadvantages of the project
+
+10.Testing used in project:
+
+Unit testing -developer side
+tools used in testing  Junit 
+***************************************
+##others project based questions:
+
+Q.1 Abstraction Implemented in Project
+
+i.Abstract Classes and Interfaces:
+ii.Dependency Injection (DI): 
+->DI is a technique where dependencies of a class are provided externally rather than created within the class itself.
+-> This promotes loose coupling and allows for easier testing and maintenance. Through DI, dependencies can be abstracted away, making the class more flexible and easier to change.
+iii.APIs and Libraries: 
+->When developing libraries or APIs, abstraction is essential for providing a clean and intuitive interface to users while hiding the internal implementation details. 
+iii.Data Abstraction: 
+->In databases and data processing systems, data abstraction involves hiding the underlying data storage and retrieval mechanisms behind a high-level interface. 
+->This allows applications to interact with the data without needing to know the specifics of how it is stored or retrieved, promoting data independence and flexibility.
+^**********************************
+Q.2 Sql Query used in project using Join
+
+@Query(value = "select * from tbl_feed_back as fb join tbl_cust as cs on fb. cust_id = cs.id",nativeQuery = true)
+	//select * from tbl_feed_back
+	List<FeedBack> getAll();
+***************
+Q3.What was unique in our cdac  project?
+
+********************************************************************************************************
+Q4.Login functional component:
+
+
+import React, { useState } from 'react';
+
+const Login = () => {
+  // State variables to store the username and password
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  
+  // Event handler for username input
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+  
+  // Event handler for password input
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  
+  // Event handler for form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    // Here you can perform validation, authentication, etc.
+    // For simplicity, let's just log the username and password
+    console.log('Username:', username);
+    console.log('Password:', password);
+    
+    // After handling the login logic, you can reset the input fields
+    setUsername('');
+    setPassword('');
+  };
+
+  return (
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Username:</label>
+          <input 
+            type="text" 
+            value={username} 
+            onChange={handleUsernameChange} 
+            required 
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input 
+            type="password" 
+            value={password} 
+            onChange={handlePasswordChange} 
+            required 
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;
+*****************************************************************
+Q5.function and method:
+
+In Java, a method is a block of code that performs a specific task and is associated with a class or an object.
+
+n general programming terminology, a function is a self-contained block of code that performs a specific task and can be called or invoked from elsewhere in the program.
+In Java, the term "function" is less commonly used compared to "method." Java tends to 
+***********************************************************************************************
+Q6.How many tables in database in project..
+21
+***********************************************************************************************************
+Q7. How you ensure you are connect with your frontend and not anyone else
+
+HTTPS: Ensure that your frontend communicates with the backend over HTTPS. HTTPS encrypts data transmitted between the client and server, preventing unauthorized parties from intercepting and accessing sensitive information.
+
+Cross-Origin Resource Sharing (CORS): Implement CORS policies on your backend to specify which domains are allowed to make requests to your backend server. This prevents unauthorized domains from accessing your backend resources
+
+*******************************************************************************************
+Q8.Why u have used spring boot in project 
+
+Rapid Development:
+ ->Spring Boot simplifies the setup and configuration of Spring-based applications by providing default configurations and auto-configuration features. This allows developers to quickly bootstrap new projects without spending time on boilerplate configuration.
+
+Microservices:
+->Spring Boot is well-suited for building microservices due to its lightweight and modular nature. It provides features like embedded servers, dependency management, and externalized configuration, making it easy to develop, deploy, and scale microservices-based architectures.
+
+->it supports a wide range of technologies and frameworks, including Spring Data, Spring Security, Hibernate, and many others, making it suitable for building a variety of applications.
+
+->Community Support: Spring Boot has a large and active community of developers, which means there are plenty of resources, tutorials, and libraries available to help with development. This makes it easier to find solutions to problems and stay up-to-date with best practices.
+
+***************************************************************
