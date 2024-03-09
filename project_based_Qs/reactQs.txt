@@ -27,3 +27,6 @@ Q4.localStorage:
 localStorage is a part of the Web Storage API in web browsers. It provides a way to store key-value pairs locally within the user's browser. 
 Scope:
 Data stored in localStorage is scoped to the origin (i.e., the combination of protocol, domain, and port) of the website. This means that data stored by one website cannot be accessed by another website, even if they are on the same domain.
+********************************************************************************
+Q5.Reducer
+Components with many state updates spread across many event handlers can get overwhelming. For these cases, you can consolidate all the state update logic outside your component in a single function, called a reducer.
