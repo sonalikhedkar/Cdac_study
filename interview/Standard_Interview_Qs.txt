@@ -2,13 +2,14 @@ Standard Interview questions:
 start always with greetings:
 Good morning /afternoon/evening sir/mam
 thank for giving this apportunity to me
+
 *******
 Q1.Tell me about yourself??
 
 As a mention in my cv myself sonali khedkar
-I have done my graduation in Information Technology from GECA from chattrapati sabhaji nagar
- I've actively participated in coding challenges on platforms like HackerRank, where I've achieved a strong score my badges in java is gold level and problem solving is silver level. i shifted me to leetcode and continusly building my problem solving skills.
-*** in cdac course I am topper in core java module.
+I have done my graduation in Information Technology .recently I completed my PG-Dac from cdac.
+I want to build my career as software developer .for that i learned technologies that are need to this field like java,react ,database i also build project using this technology.
+ 
 I have always been passionate about software development field, which has led me to experience about solving real time problems. and that makes me excited .
 Throughout education, I've developed a strong skill set in software development and have consistently sought out opportunities for growth and learning. I believe in work with sense of passion, and I'm excited about the possibility of bringing my unique perspective and contributions to [company/organization name]."
 
@@ -202,3 +203,11 @@ Microservices:
 ->Community Support: Spring Boot has a large and active community of developers, which means there are plenty of resources, tutorials, and libraries available to help with development. This makes it easier to find solutions to problems and stay up-to-date with best practices.
 
 ***************************************************************
+Q9. Do you have any questions for me?
+
+What are the roles and responsibilities of this job role and what are the daily day-to-day activities?
+
+*********************************************************
+
+
+
