@@ -36,7 +36,8 @@ An application server adds business logic to compute the web server's response. 
 ******************************************************
 Q4.final and finally:
 
--> final is an access modifier, 
+-> final is an access modifier,
+-> vatiables declared final cannot be modified, method declared final cannot be overriden, classes declared final cannot be instantiated and cannot be inherited.
 ->finally is the block in Exception Handling 
 ->finalize is the method of object class.
 
@@ -88,9 +89,9 @@ iii.UPDATE procedures: Executes an UPDATE statement on the table based on the sp
 iv.DELETE procedures: Deletes a specified row in the WHERE clause.
 *****************************************************************
 Q11.Can exception be thrown in finally block
-If there is an exception pending (when the try block has a finally but no catch), the new exception replaces that one.
+If there's a pending exception (thrown in try but not caught), a new exception thrown in finally replaces it.
 
-If there is no exception pending, it works just as throwing an exception outside the finally block.
+If there's no pending exception, throwing an exception in finally behaves like throwing it outside finally.
 
 *******************************************************************
 Q12.Dependency injection, Annotations:
@@ -109,7 +110,7 @@ SOAP:
 i.Simple Object Access Protocol
 ii.SOAP is a protocol for communication between applications
 iii.SOAP API exposes the operation.
-iv.SOAP is independent and can work with any transport protocol.
+iv.SOAP is independent and can work with any transport protocol(TCP, UDP).
 v.SOAP supports only XML data exchange.
 
 
@@ -172,15 +173,18 @@ Memory Usage:
 Q17.Which sorting algorithm is best:
 
 For General Use:
- Quick Sort is often considered the best due to its efficiency in handling large datasets and its 
+ Quick Sort is often considered the best due to its efficiency in handling large datasets and its TC:Best case: O(nlogn) worse case:O(n^2) avg case: O(nlogn)
+SC:Worst Case: O(log n) Best Case: O(log n) Average Case: O(log n).
 O(nlogn) average time complexity.
 
 For Stability and Large Data: 
-Merge Sort is preferred when stability is required or when working with large datasets, despite its 
-O(n) space requirement.
+Merge Sort is preferred when stability is required or when working with large datasets, TC: Best case: O(nlogn) worse case:O(n^2) avg case: O(nlogn) despite its 
+SC: Worst Case: O(n) Best Case: O(n) Average Case: O(n)
+
 
 For Small or Nearly Sorted Data:
--> Insertion Sort is excellent, offering simplicity and efficiency.
+-> Insertion Sort is excellent, offering simplicity and efficiency. Best case: O(n) worse case:O(n^2) avg case: O(n^2)
+SC: Worst Case: O(1) Best Case: O(1) Average Case: O(1)
 
 Each algorithm has its strengths and is "best" within its suitable context.
 # Quick Sort is generally preferred for its overall efficiency and performance on a wide range of datasets, making it a popular choice for general-purpose sorting in many programming libraries and systems. 
